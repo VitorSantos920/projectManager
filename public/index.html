@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Aplicação NodeJS + MySQL: Aplicação de inserção de um novo projeto."
+    />
+    <meta name="author" content="Vitor Santos" />
+    <title>ProjectManager: MySQL with NodeJS | VS</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+  </head>
+  <body>
+    <main class="content">
+      <h1 class="title">Registre um novo projeto<span>.</span></h1>
+      <form action="/insert" method="post">
+        <fieldset class="projectName">
+          <input
+            class="input-controller"
+            type="text"
+            name="name"
+            id="name"
+            required
+            spellcheck="false"
+          />
+          <label for="name" class="label-controller">Nome do projeto</label>
+        </fieldset>
+        <fieldset class="projectDescription">
+          <textarea
+            name="description"
+            id="description"
+            cols="30"
+            rows="2"
+            required
+            class="input-controller"
+            spellcheck="false"
+          ></textarea>
+
+          <label for="description" class="label-controller"
+            >Descrição do projeto
+          </label>
+        </fieldset>
+        <fieldset class="projectResponsible">
+          <input
+            class="input-controller"
+            type="text"
+            name="responsible"
+            id="responsible"
+            required
+            spellcheck="false"
+          />
+          <label class="label-controller" for="responsible"
+            >Responsável pelo projeto</label
+          >
+        </fieldset>
+        <input class="submit" type="submit" value="Adicionar Projeto" />
+      </form>
+    </main>
+    <script src="./assets/js/labels.js"></script>
+  </body>
+</html>

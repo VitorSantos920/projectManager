@@ -1,0 +1,109 @@
+@import './functions.scss';
+
+$secondary-color: #1c90f5;
+$input-bRadius: 1rem;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #535560;
+  display: grid;
+  font-family: 'Kanit', sans-serif;
+  min-height: 100vh;
+  place-items: center;
+}
+
+.content {
+  background: linear-gradient(180deg, #272b37, #353742);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  padding: 3rem;
+  width: 400px;
+
+  .title {
+    color: #fff;
+    margin-bottom: to-rem(20);
+
+    span {
+      color: $secondary-color;
+    }
+  }
+
+  fieldset {
+    border: none;
+    position: relative;
+
+    &:nth-of-type(2) {
+      margin-top: to-rem(8);
+    }
+
+    .label-controller {
+      color: #696a77;
+      inset: 35px 0 0 15px;
+      pointer-events: none;
+      position: absolute;
+      transition: 0.2s;
+    }
+
+    .input-controller {
+      height: 78px;
+      margin: to-rem(8) 0;
+      outline: 0;
+      padding: to-rem(15);
+
+      &:focus {
+        border: 3px solid $secondary-color;
+        padding: to-rem(12);
+
+        & + .label-controller {
+          color: $secondary-color;
+        }
+      }
+    }
+
+    #description {
+      max-width: 304px;
+      min-height: 140px;
+      min-width: 304px;
+      padding-top: to-rem(26);
+
+      &:focus {
+        padding-top: to-rem(23);
+      }
+    }
+
+    .input-controller:focus + label,
+    .input-controller + label.has-content {
+      font-size: to-rem(12);
+      top: 17px;
+    }
+  }
+
+  .input-controller,
+  .submit {
+    border: none;
+    border-radius: $input-bRadius;
+    font-family: 'Kanit', sans-serif;
+    font-size: to-rem(18);
+    width: 100%;
+  }
+
+  .submit {
+    background-color: $secondary-color;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: to-rem(16);
+    padding: 12px 24px;
+    transition: all 1s;
+
+    &:hover {
+      background-color: #fff;
+      color: $secondary-color;
+    }
+  }
+}
